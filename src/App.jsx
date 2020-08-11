@@ -5,7 +5,7 @@ import logoSrc from './logo.png';
 
 const App = () => (
   <div className={style.message}>
-    <img className={style.logo} src={logoSrc} />
+    <img alt="" className={style.logo} src={logoSrc} />
     Hello school!
     <input />
   </div>

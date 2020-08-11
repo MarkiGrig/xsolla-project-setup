@@ -6,7 +6,14 @@ module.exports = {
   root: false,
   extends: [
     'airbnb',
+    'eslint:recommended',
+    'plugin:react/recommended',
   ],
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -18,5 +25,6 @@ module.exports = {
     'react',
   ],
   rules: {
+    'react/jsx-indent': ['error', 2],
   },
 };
