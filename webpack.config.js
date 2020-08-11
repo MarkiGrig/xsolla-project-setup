@@ -3,7 +3,7 @@ const path = require('path');
 const MiniCssPlugin = require('mini-css-extract-plugin');
 
 module.exports = (env, argv) => ({
-  entry: ['./src/index.jsx'],
+  entry: ['react-hot-loader/patch', './src/index.jsx'],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'main.js',
@@ -16,6 +16,8 @@ module.exports = (env, argv) => ({
   devServer: {
     contentBase: [path.join(__dirname, 'dist')],
     port: 9000,
+    hot: true,
+    inline: true,
   },
   module: {
     rules: [
