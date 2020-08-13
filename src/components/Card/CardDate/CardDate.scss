@@ -1,0 +1,16 @@
+@use "src/scss/colors" as c;
+
+.card-date {
+  user-select: none;
+  font-weight: normal;
+  border: solid c.$card-items-color;
+  border-width: calc(2 / (var(--html-font-size-px)) * (var(--html-font-size-vw)));
+  box-sizing: border-box;
+  border-radius: calc(6 / var(--html-font-size-px) * var(--html-font-size-vw));
+  padding: calc(8 / var(--html-font-size-px) * var(--html-font-size-vw))
+  calc(12 / var(--html-font-size-px) * var(--html-font-size-vw))
+  calc(4 / var(--html-font-size-px) * var(--html-font-size-vw));
+  width: calc(80 / var(--html-font-size-px) * var(--html-font-size-vw));
+  height: calc(80 / var(--html-font-size-px) * var(--html-font-size-vw));
+  text-align: center;
+}

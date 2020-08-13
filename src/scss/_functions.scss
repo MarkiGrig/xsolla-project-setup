@@ -1,0 +1,17 @@
+@use "variables" as v;
+
+@function vw (
+  $pixels,
+  $base-font-size-px: v.$base-font-size-px,
+  $base-font-size-vw: v.$base-font-size-vw
+) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($base-font-size-px)) {
+    $context: $base-font-size-px * 1px;
+  }
+
+  @return $pixels / $base-font-size-px * $base-font-size-vw;
+}

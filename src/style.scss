@@ -1,17 +1,1 @@
-$font-size: 48px;
-$logo-size: 1em;
-
-.message {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: $font-size;
-  text-align: center;
-}
-
-.logo {
-  width: $logo-size;
-  height: $logo-size;
-  padding: 0 .3em;
-}
+@import "scss/reset";

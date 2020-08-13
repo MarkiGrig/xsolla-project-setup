@@ -5,9 +5,9 @@ module.exports = {
   },
   root: false,
   extends: [
-    'airbnb',
     'eslint:recommended',
     'plugin:react/recommended',
+    'airbnb',
   ],
   settings: {
     react: {
@@ -26,5 +26,6 @@ module.exports = {
   ],
   rules: {
     'react/jsx-indent': ['error', 2],
+    'react/prop-types': 0,
   },
 };

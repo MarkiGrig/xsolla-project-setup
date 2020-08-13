@@ -1,0 +1,13 @@
+@use "src/scss/colors" as c;
+
+.bookmark {
+  svg {
+    fill: none
+  }
+
+  &_active {
+    svg {
+      fill: c.$card-items-color
+    }
+  }
+}

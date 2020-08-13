@@ -44,6 +44,10 @@ module.exports = (env, argv) => ({
         test: /\.png$/i,
         use: 'file-loader',
       },
+      {
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
+      },
     ],
   },
   plugins: [

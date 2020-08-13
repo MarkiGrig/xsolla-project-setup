@@ -1,14 +1,9 @@
 import { hot } from 'react-hot-loader/root';
 import React from 'react';
-import style from './style.scss';
-import logoSrc from './logo.png';
+import Bookmark from './components/Card/Bookmark/Bookmark';
 
 const App = () => (
-  <div className={style.message}>
-    <img alt="" className={style.logo} src={logoSrc} />
-    Hello school!
-    <input />
-  </div>
+  <Bookmark />
 );
 
 export default hot(App);
