@@ -1,16 +1,15 @@
 @use "src/scss/colors" as c;
+@use "src/scss/functions" as f;
 
 .card-date {
+  height: 100%;
+  width: 100%;
   user-select: none;
   font-weight: normal;
-  border: solid c.$card-items-color;
-  border-width: calc(2 / (var(--html-font-size-px)) * (var(--html-font-size-vw)));
+  border: f.vw(2) solid c.$card-items-color;
   box-sizing: border-box;
-  border-radius: calc(6 / var(--html-font-size-px) * var(--html-font-size-vw));
-  padding: calc(8 / var(--html-font-size-px) * var(--html-font-size-vw))
-  calc(12 / var(--html-font-size-px) * var(--html-font-size-vw))
-  calc(4 / var(--html-font-size-px) * var(--html-font-size-vw));
-  width: calc(80 / var(--html-font-size-px) * var(--html-font-size-vw));
-  height: calc(80 / var(--html-font-size-px) * var(--html-font-size-vw));
+  border-radius: f.vw(6);
+  padding: f.vw(8) f.vw(12) f.vw(4);
   text-align: center;
+  color: white;
 }

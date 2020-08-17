@@ -1,1 +1,6 @@
+@use "src/scss/variables" as v;
 @import "scss/reset";
+
+html {
+  font-size: v.$base-font-size-vw;
+}

@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const MiniCssPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = (env, argv) => ({
   entry: ['react-hot-loader/patch', './src/index.jsx'],
@@ -24,7 +25,7 @@ module.exports = (env, argv) => ({
       {
         test: /\.s[ac]ss$/i,
         use: [
-          MiniCssPlugin.loader,
+          argv.mode === 'production' ? MiniCssPlugin.loader : 'style-loader',
           {
             loader: 'css-loader',
             options: {
@@ -55,5 +56,10 @@ module.exports = (env, argv) => ({
       template: './src/index.html',
     }),
     new MiniCssPlugin(),
+    new CopyPlugin({
+      patterns: [
+        { from: 'src/_data/events.json', to: path.join(__dirname, 'dist/data') },
+      ],
+    }),
   ],
 });

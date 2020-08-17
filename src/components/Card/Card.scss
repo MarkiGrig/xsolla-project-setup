@@ -1,0 +1,84 @@
+@use "src/scss/colors" as c;
+@use "src/scss/functions" as f;
+@use "src/scss/mixins" as m;
+
+.card {
+  $card-content-padding: 40;
+  $bookmark-padding: 20;
+
+  @include m.fullSize;
+  position: relative;
+  border-radius: f.vw(6);
+  overflow: hidden;
+
+  &__background {
+    @include m.fullSize;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &Image {
+      @include m.fullSize;
+      transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
+    }
+
+    &Filter {
+      @include m.fullSize;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      background: rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  &__content {
+    @include m.fullSize;
+    position: absolute;
+    top: 0;
+    left: 0;
+    user-select: none;
+    padding: f.vw($card-content-padding);
+    color: c.$card-items-color;
+    font-size: f.vw(48);
+    line-height: f.vw(66);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 999;
+
+    &Date {
+      width: f.vw(80);
+      height: f.vw(80);
+    }
+  }
+
+  &__link {
+    @include m.fullSize;
+  }
+
+  &__bookmark {
+    position: absolute;
+    top: f.vw($card-content-padding - $bookmark-padding);
+    right: f.vw($card-content-padding - $bookmark-padding);
+    z-index: 999;
+    padding: f.vw(20);
+    border-radius: 50%;
+    cursor: pointer;
+    height: f.vw(20 + 2 * $bookmark-padding);
+    width: f.vw(16 + 2 * $bookmark-padding);
+
+    svg {
+      height: f.vw(20);
+      width: f.vw(16);
+    }
+  }
+
+  &:hover .card__background {
+    &Image {
+      @include m.size(120%);
+    }
+  }
+}
