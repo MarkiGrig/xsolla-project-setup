@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import httpGet from '../../utils/httpGet';
 import Card from '../Card/Card';
 import style from './CardGallery.scss';
 
