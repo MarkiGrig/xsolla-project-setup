@@ -3,7 +3,7 @@ import style from './Page.scss';
 import FilterCardGallery from '../FilterCardGallery/FilterCardGallery';
 
 const Page = () => {
-  const [title, setTitle] = useState('Event List');
+  const [title, setTitle] = useState('Event Listing');
   return (
     <div className={style.page}>
       <h1 className={style.page__title}>{title}</h1>
