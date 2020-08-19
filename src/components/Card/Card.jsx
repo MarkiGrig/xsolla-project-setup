@@ -8,8 +8,7 @@ import { addBookmarkAction, removeBookmarkAction } from '../../actions/BookmarkA
 const Card = ({
   id, imageSrc, title, date,
 }) => {
-  const bookmarks = useSelector((state) => state.bookmarkState, shallowEqual);
-  const bookmark = bookmarks.filter((i) => i === id)[0];
+  const bookmark = useSelector((state) => state.bookmarkState.find((i) => i === id), shallowEqual);
   const dispatch = useDispatch();
 
   const onClick = useCallback(() => {
@@ -34,9 +33,9 @@ const Card = ({
           <div className={style['card__content-title']}>{title}</div>
         </div>
       </div>
-      <div className={style.card__bookmark} onClick={onClick}>
+      <button className={style.card__bookmark} onClick={onClick} type="button">
         <Bookmark active={bookmark !== undefined} />
-      </div>
+      </button>
     </div>
   );
 };
