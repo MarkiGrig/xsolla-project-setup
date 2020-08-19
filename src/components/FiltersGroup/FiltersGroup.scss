@@ -2,14 +2,13 @@
 @use "src/scss/mixins" as m;
 
 .filtersGroup {
-  $margin: 20;
-
   @include m.fullSize;
   display: flex;
   flex-wrap: wrap;
-  margin-right: f.vw(-1 * $margin);
 
   &__item {
-    margin-right: f.vw($margin);
+    margin-right: f.vw(20);
+    min-width: f.vw(200);
+    width: fit-content;
   }
 }

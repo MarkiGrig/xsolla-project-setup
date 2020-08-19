@@ -1,6 +1,14 @@
 @use "src/scss/variables" as v;
+@use "src/scss/functions" as f;
+@use "src/scss/colors" as c;
 @import "scss/reset";
 
 html {
   font-size: v.$base-font-size-vw;
+  font-family: Arial, sans-serif;
+}
+
+.App {
+  background: c.$body-background-color;
+  padding: f.vw(80) 0;
 }

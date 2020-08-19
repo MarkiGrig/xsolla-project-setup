@@ -1,0 +1,11 @@
+@use "src/scss/functions" as f;
+
+.filterCardGallery {
+  &__filters {
+    margin-bottom: f.vw(42);
+  }
+
+  &__gallery {
+
+  }
+}

@@ -13,23 +13,18 @@
 
   &__background {
     @include m.fullSize;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    transition: background-size 0.3s ease-in-out;
 
-    &Image {
-      @include m.fullSize;
-      transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
-    }
-
-    &Filter {
+    &::after {
+      content: "";
       @include m.fullSize;
       position: absolute;
       top: 0;
       left: 0;
-      z-index: 2;
+      z-index: 999;
       background: rgba(0, 0, 0, 0.2);
     }
   }
@@ -47,11 +42,13 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    font-weight: 900;
     z-index: 999;
 
     &Date {
       width: f.vw(80);
       height: f.vw(80);
+      font-weight: normal;
     }
   }
 
@@ -77,8 +74,6 @@
   }
 
   &:hover .card__background {
-    &Image {
-      @include m.size(120%);
-    }
+    background-size: 120% 120%;
   }
 }

@@ -2,6 +2,7 @@ import React, { useEffect, useState, useCallback } from 'react';
 import FiltersGroup from '../FiltersGroup/FiltersGroup';
 import CardGallery from '../CardGallery/CardGallery';
 import { getMonthFromDate } from '../../utils/utils';
+import style from './FilterCardGallery.scss';
 
 const Months = {
   January: '01',
@@ -79,10 +80,14 @@ const FilterCardGallery = () => {
   };
 
   return (
-    <>
-      <FiltersGroup filters={filters(cities, handlers)} />
-      <CardGallery events={getFilteredEvents()} />
-    </>
+    <div className={style.filterCardGallery}>
+      <div className={style.filterCardGallery__filters}>
+        <FiltersGroup filters={filters(cities, handlers)} />
+      </div>
+      <div className={style.filterCardGallery__gallery}>
+        <CardGallery events={getFilteredEvents()} />
+      </div>
+    </div>
   );
 };
 

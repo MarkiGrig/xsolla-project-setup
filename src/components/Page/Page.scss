@@ -1,0 +1,20 @@
+@use "src/scss/functions" as f;
+@use "src/scss/mixins" as m;
+@use "src/scss/colors" as c;
+
+.page {
+  height: 100%;
+  padding: f.vw(100) f.vw(100) f.vw(80);
+  background: c.$main-background-color;
+  box-shadow: 0 f.vw(16) f.vw(32) rgba(0, 0, 0, 0.12);
+  border-radius: f.vw(16);
+  width: f.vw(1440);
+  margin: 0 auto;
+
+  &__title {
+    font-weight: 900;
+    font-size: f.vw(48);
+    line-height: f.vw(66);
+    padding-bottom: f.vw(40);
+  }
+}
