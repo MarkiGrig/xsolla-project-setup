@@ -19,6 +19,7 @@ module.exports = (env, argv) => ({
     port: 9000,
     hot: true,
     inline: true,
+    historyApiFallback: true,
   },
   module: {
     rules: [

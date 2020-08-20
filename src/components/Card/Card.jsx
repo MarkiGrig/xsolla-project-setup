@@ -1,5 +1,6 @@
 import React, { useCallback } from 'react';
 import { shallowEqual, useSelector, useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import Bookmark from './Bookmark/Bookmark';
 import CardDate from './CardDate/CardDate';
 import style from './Card.scss';
@@ -10,8 +11,9 @@ const Card = ({
 }) => {
   const bookmark = useSelector((state) => state.bookmarkState.find((i) => i === id), shallowEqual);
   const dispatch = useDispatch();
+  const history = useHistory();
 
-  const onClick = useCallback(() => {
+  const onBookmarkClick = useCallback(() => {
     if (bookmark !== undefined) {
       dispatch(removeBookmarkAction(id));
     } else {
@@ -19,9 +21,13 @@ const Card = ({
     }
   }, [bookmark, id]);
 
+  const onLinkClick = useCallback(() => {
+    history.push(`/events/${id}`);
+  }, [id]);
+
   return (
     <div className={style.card}>
-      <div className={style.card__link}>
+      <button className={style.card__link} onClick={onLinkClick} type="button">
         <div
           className={style.card__background}
           style={{ backgroundImage: `url(${imageSrc})` }}
@@ -32,8 +38,8 @@ const Card = ({
           </div>
           <div className={style['card__content-title']}>{title}</div>
         </div>
-      </div>
-      <button className={style.card__bookmark} onClick={onClick} type="button">
+      </button>
+      <button className={style.card__bookmark} onClick={onBookmarkClick} type="button">
         <Bookmark active={bookmark !== undefined} />
       </button>
     </div>

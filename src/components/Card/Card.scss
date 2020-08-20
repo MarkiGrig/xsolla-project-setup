@@ -54,6 +54,7 @@
 
   &__link {
     @include m.fullSize;
+    cursor: default;
   }
 
   &__bookmark {
