@@ -1,0 +1,15 @@
+@use "src/scss/colors" as c;
+@use "src/scss/functions" as f;
+
+.card-date {
+  height: 100%;
+  width: 100%;
+  user-select: none;
+  font-weight: normal;
+  border: f.vw(2) solid c.$card-items-color;
+  box-sizing: border-box;
+  border-radius: f.vw(6);
+  padding: f.vw(8) f.vw(12) f.vw(4);
+  text-align: center;
+  color: white;
+}

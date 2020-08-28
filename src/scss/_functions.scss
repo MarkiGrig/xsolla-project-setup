@@ -1,0 +1,9 @@
+@use "variables" as v;
+
+@function vw (
+  $pixels,
+  $base-font-size-px: v.$base-font-size-px,
+  $base-font-size-vw: v.$base-font-size-vw
+) {
+  @return $pixels / $base-font-size-px * $base-font-size-vw;
+}

@@ -1,17 +1,19 @@
-$font-size: 48px;
-$logo-size: 1em;
+@use "src/scss/variables" as v;
+@use "src/scss/functions" as f;
+@use "src/scss/colors" as c;
+@import "scss/reset";
 
-.message {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: $font-size;
-  text-align: center;
+html {
+  font-size: v.$base-font-size-vw;
+  font-family: Arial, sans-serif;
 }
 
-.logo {
-  width: $logo-size;
-  height: $logo-size;
-  padding: 0 .3em;
+body {
+  background: c.$body-background-color;
+}
+
+.App {
+  background: c.$body-background-color;
+  padding: f.vw(80) 0;
+  min-height: 100%;
 }

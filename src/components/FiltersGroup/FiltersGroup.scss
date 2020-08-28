@@ -1,0 +1,14 @@
+@use "src/scss/functions" as f;
+@use "src/scss/mixins" as m;
+
+.filtersGroup {
+  @include m.fullSize;
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    margin-right: f.vw(20);
+    min-width: f.vw(200);
+    width: fit-content;
+  }
+}

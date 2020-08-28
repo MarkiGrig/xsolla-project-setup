@@ -1,0 +1,13 @@
+@use "src/scss/functions" as f;
+@use "src/scss/mixins" as m;
+
+.labeledSelector {
+  @include m.fullSize;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+
+  &__label {
+    margin-right: f.vw(20);
+  }
+}

@@ -1,0 +1,47 @@
+@use "src/scss/functions" as f;
+@use "src/scss/mixins" as m;
+@use "src/scss/colors" as c;
+
+.selector {
+  @include m.fullSize;
+  display: flex;
+  position: relative;
+  background: c.$main-background-color;
+  transition: background-color 0.3s;
+  min-height: f.vw(50);
+
+  &__select {
+    min-height: f.vw(50);
+    cursor: pointer;
+    border: f.vw(1) solid c.$select-border-color;
+    box-sizing: border-box;
+    border-radius: f.vw(6);
+    padding-left: f.vw(22);
+    padding-right: f.vw(45);
+    position: relative;
+    z-index: 3;
+    width: 100%;
+  }
+
+  &__polygon {
+    height: f.vw(8);
+    position: absolute;
+    cursor: default;
+    top: f.vw(22);
+    width: f.vw(14);
+    right: f.vw(14);
+    z-index: 2;
+
+    svg {
+      fill: none;
+    }
+  }
+
+  &:hover {
+    background: c.$main-background-hover-color;
+  }
+
+  &:active {
+    background: c.$main-background-active-color;
+  }
+}

@@ -1,0 +1,25 @@
+@use "src/scss/mixins" as m;
+@use "src/scss/functions" as f;
+
+.cardGallery {
+  $margin: f.vw(40);
+
+  @include m.size(100%, fit-content);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: space-between;
+  margin-bottom: -1 * $margin;
+  user-select: none;
+
+  &__item {
+    width: f.vw(600);
+    height: f.vw(400);
+    margin-bottom: $margin;
+  }
+
+  &__container {
+    min-height: $margin;
+  }
+}

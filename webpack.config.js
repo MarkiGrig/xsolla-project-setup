@@ -1,12 +1,14 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const MiniCssPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = (env, argv) => ({
   entry: ['react-hot-loader/patch', './src/index.jsx'],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'main.js',
+    publicPath: './',
   },
   devtool: argv.mode === 'production' ? 'hidden-source-map' : 'source-map',
   resolve: {
@@ -18,13 +20,14 @@ module.exports = (env, argv) => ({
     port: 9000,
     hot: true,
     inline: true,
+    historyApiFallback: true,
   },
   module: {
     rules: [
       {
         test: /\.s[ac]ss$/i,
         use: [
-          MiniCssPlugin.loader,
+          argv.mode === 'production' ? MiniCssPlugin.loader : 'style-loader',
           {
             loader: 'css-loader',
             options: {
@@ -44,6 +47,10 @@ module.exports = (env, argv) => ({
         test: /\.png$/i,
         use: 'file-loader',
       },
+      {
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
+      },
     ],
   },
   plugins: [
@@ -51,5 +58,10 @@ module.exports = (env, argv) => ({
       template: './src/index.html',
     }),
     new MiniCssPlugin(),
+    new CopyPlugin({
+      patterns: [
+        { from: 'src/_data/events.json', to: path.join(__dirname, 'dist/data') },
+      ],
+    }),
   ],
 });
