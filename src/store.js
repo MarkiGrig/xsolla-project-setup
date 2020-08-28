@@ -1,12 +1,15 @@
 import { combineReducers, createStore } from 'redux';
 import BookmarkReducer from './reducers/BookmarkReducer';
+import PageTitleReducer from './reducers/PageTitleReducer';
 
 const reducers = combineReducers({
   bookmarkState: BookmarkReducer,
+  pageTitleState: PageTitleReducer,
 });
 
 const initialState = {
   bookmarkState: [],
+  pageTitleState: '',
 };
 
 const store = createStore(

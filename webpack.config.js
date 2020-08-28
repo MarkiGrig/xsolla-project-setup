@@ -8,6 +8,7 @@ module.exports = (env, argv) => ({
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'main.js',
+    publicPath: './',
   },
   devtool: argv.mode === 'production' ? 'hidden-source-map' : 'source-map',
   resolve: {

@@ -3,6 +3,8 @@ import FiltersGroup from '../FiltersGroup/FiltersGroup';
 import CardGallery from '../CardGallery/CardGallery';
 import { getMonthFromDate } from '../../utils/utils';
 import style from './FilterCardGallery.scss';
+import { useDispatch } from 'react-redux';
+import { setPageTitleAction } from '../../actions/PageTitleActions';
 
 const Months = {
   January: '01',
@@ -39,9 +41,11 @@ const FilterCardGallery = () => {
   const [selectedMonth, setSelectedMonth] = useState('All');
   const abortController = new AbortController();
   const { signal } = abortController;
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    fetch('data/events.json', { signal }).then(
+    dispatch(setPageTitleAction('Event Listing'));
+    fetch('http://localhost:3000/events', { signal }).then(
       (response) => response.json(),
       (error) => error.json(),
     ).then(
