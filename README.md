@@ -2,7 +2,7 @@
 ## Запуск проекта
 1. Клонировать репозиторий `git clone https://github.com/MarkiGrig/xsolla-project-setup`;
 2. Запустить json server: `json-server src/_data/events.json`;
-3. Запустить команду `yarn start` для старта фронта;
+3. Запустить команду `yarn start` для старта фронта (перед этим пока нужно собрать проект командой `yarn build`, скоро исправлю);
 
 ## Что сделано:
 
