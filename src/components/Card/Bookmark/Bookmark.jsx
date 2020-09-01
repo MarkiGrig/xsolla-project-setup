@@ -2,11 +2,21 @@ import React from 'react';
 import BookmarkSvg from './Bookmark.svg';
 import SvgComponent from '../../SvgComponent/SvgComponent';
 import style from './Bookmark.scss';
+import classNames from 'classnames/bind';
 
-const Bookmark = ({ active }) => (
-  <SvgComponent className={[style.bookmark, active ? style.bookmark_active : undefined].join(' ')}>
-    <BookmarkSvg />
-  </SvgComponent>
-);
+const cx = classNames.bind(style);
+
+const Bookmark = ({ active }) => {
+  const className = cx({
+    bookmark: true,
+    bookmark_active: active,
+  });
+
+  return (
+    <SvgComponent className={className}>
+      <BookmarkSvg />
+    </SvgComponent>
+  )
+};
 
 export default Bookmark;

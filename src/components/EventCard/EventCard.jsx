@@ -57,7 +57,9 @@ const EventCard = ({ id }) => {
     </div>
   );
 
-  return event ? event.name ? renderCard() : <div>event is not found :(</div> : <div>loading...</div>;
+  return event ?
+    event.name ? renderCard() : <div>event is not found :(</div>
+    : <div>loading...</div>;
 };
 
 export default EventCard;
