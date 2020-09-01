@@ -1,6 +1,6 @@
 import React from 'react';
-import style from './Page.scss';
 import { useSelector } from 'react-redux';
+import style from './Page.scss';
 
 const Page = ({ children }) => {
   const title = useSelector((state) => state.pageTitleState);

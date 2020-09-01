@@ -17,7 +17,6 @@ const App = () => {
    */
   const renderPage = () => {
     if (matchEventCard) {
-      // TODO useParams выдает undefined
       const { id } = matchEventCard.params;
       return <EventCard id={id} />;
     }

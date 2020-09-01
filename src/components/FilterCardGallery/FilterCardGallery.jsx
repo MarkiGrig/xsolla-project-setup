@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useCallback } from 'react';
+import { useDispatch } from 'react-redux';
 import FiltersGroup from '../FiltersGroup/FiltersGroup';
 import CardGallery from '../CardGallery/CardGallery';
 import { getMonthFromDate } from '../../utils/utils';
 import style from './FilterCardGallery.scss';
-import { useDispatch } from 'react-redux';
 import { setPageTitleAction } from '../../actions/PageTitleActions';
 
 const Months = {
