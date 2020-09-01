@@ -59,7 +59,10 @@ const FilterCardGallery = () => {
         }
       },
     );
-    return () => abortController.abort();
+    return () => {
+      abortController.abort();
+      dispatch(setPageTitleAction(''));
+    }
   }, []);
 
   const onCitySelect = useCallback((value) => { setSelectedCity(value); }, []);
